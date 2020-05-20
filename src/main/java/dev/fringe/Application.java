@@ -35,7 +35,7 @@ public class Application {
 				.setContextPath(CONTEXT_PATH)
 				.setResourceManager(new FileResourceManager(new File(RESOURCE_FILE_DIR), 1024))
 				.setDeploymentName(Application.class.getName()+ ".war")
-		        .addServlet(Servlets.servlet("DispatcherServlet", DispatcherServlet.class, new ImmediateInstanceFactory(new DispatcherServlet(context)))						
+		        .addServlet(Servlets.servlet("DispatcherServlet", DispatcherServlet.class, new ImmediateInstanceFactory(new DispatcherServlet(context)))		        		
 				.addMappings("/").setLoadOnStartup(1))
 				.addServlet((JspServletBuilder.createServlet("Default Jsp Servlet", "*.jsp")));
 				
