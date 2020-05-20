@@ -33,7 +33,7 @@ public class Application {
 				.setResourceManager(new FileResourceManager(new File(RESOURCE_FILE_DIR), 1024))
 				.setDeploymentName(WAR_NAME)
 				.addServlet(new AppServletInfo(SERVLET_NAME, org.springframework.web.servlet.DispatcherServlet.class)
-				.addInitParam("contextConfigLocation", "classpath:/WEB-INF/spring-servlet.xml")
+				.addInitParam("contextConfigLocation", "classpath:/spring-servlet.xml")
 				.addMappings("/").setLoadOnStartup(1))
 				.addServlet((JspServletBuilder.createServlet("Default Jsp Servlet", "*.jsp")));
 				
