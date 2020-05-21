@@ -10,6 +10,7 @@ import org.apache.jasper.deploy.JspPropertyGroup;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import dev.fringe.metadata.TldLocator;
 import io.undertow.Handlers;
 import io.undertow.Undertow;
 import io.undertow.jsp.HackInstanceManager;

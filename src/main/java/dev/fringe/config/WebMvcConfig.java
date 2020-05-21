@@ -9,10 +9,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import com.github.mjeanroy.springmvc.view.mustache.configuration.EnableMustache;
+import com.github.mjeanroy.springmvc.view.mustache.configuration.MustacheProvider;
+
 @Configuration
 @ComponentScan(basePackages = "dev.fringe.controller")
 @EnableScheduling
 @EnableWebMvc
+@EnableMustache(provider = MustacheProvider.AUTO)
 public class WebMvcConfig implements WebMvcConfigurer {
     public void configureViewResolvers(ViewResolverRegistry registry)  {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();

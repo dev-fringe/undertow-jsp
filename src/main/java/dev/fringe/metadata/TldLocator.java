@@ -1,4 +1,4 @@
-package dev.fringe;
+package dev.fringe.metadata;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +36,7 @@ import org.jboss.metadata.web.spec.VariableMetaData;
  * Original code taken from https://github.com/djotanov/undertow-jsp-template
  */
 public class TldLocator {
-	static HashMap<String, TagLibraryInfo> createTldInfos() throws IOException {
+	public static HashMap<String, TagLibraryInfo> createTldInfos() throws IOException {
 		URLClassLoader loader = (URLClassLoader) Thread.currentThread().getContextClassLoader();
 		URL[] urls = loader.getURLs();
 		HashMap<String, TagLibraryInfo> tagLibInfos = new HashMap<String, TagLibraryInfo>();
