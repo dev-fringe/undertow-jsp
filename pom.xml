@@ -14,7 +14,22 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.2.6.RELEASE</version>
-		</dependency>	
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>5.2.6.RELEASE</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>5.2.6.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.projectreactor.netty</groupId>
+		    <artifactId>reactor-netty</artifactId>
+		    <version>0.9.7.RELEASE</version>
+		</dependency>
 		<dependency>
 			<groupId>io.undertow.jastow</groupId>
 			<artifactId>jastow</artifactId>
