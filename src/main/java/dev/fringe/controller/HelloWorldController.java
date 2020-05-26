@@ -1,11 +1,14 @@
 package dev.fringe.controller;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 import dev.fringe.model.Href;
+import dev.fringe.model.Message;
+import dev.fringe.model.OutputMessage;
 
 @Controller
 public class HelloWorldController extends AbstractController {
@@ -50,4 +55,11 @@ public class HelloWorldController extends AbstractController {
 	public String footer(Model model) throws Exception {
 		return "footer";
 	}	
+
+	  @MessageMapping("/chat")
+	  @SendTo("/topic/message")
+	  public OutputMessage sendMessage(Message message) {
+	    System.out.println("Message sent");
+	    return new OutputMessage(message, new Date());
+	  }
 }
